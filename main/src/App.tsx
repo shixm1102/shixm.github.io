@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './App.scss';
 
 import type { FC } from 'react';
-import { Button } from 'antd';
+import { Button, ConfigProvider, theme } from 'antd';
 import 'antd/dist/reset.css';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm
+        // token: { colorPrimary: '#00b96b' }
+      }}
+    >
       <Button type="primary">Button</Button>
 
       <a
@@ -19,8 +24,8 @@ function App() {
       >
         Learn React
       </a>
-    </div>
-  );
-}
+    </ConfigProvider>
+  )
+};
 
 export default App;
